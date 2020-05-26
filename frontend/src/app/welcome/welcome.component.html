@@ -1,0 +1,13 @@
+<h2>Welcome {{name}}</h2>
+<p>You can keep your memmories here...</p><br>
+<a routerLink="/diaries">Click Here</a> to  manage your diaries
+
+<div class="container">
+    <p>Get Customized welcome message here</p>
+    <button (click)="getWelcomeMessageWithParam()" class="btn btn-primary">Get Message</button>
+</div>
+
+<div class="container" *ngIf="welcomeMessage">
+    <p>Your Customized welcome message</p>
+    <h3>{{welcomeMessage}}</h3>
+</div>

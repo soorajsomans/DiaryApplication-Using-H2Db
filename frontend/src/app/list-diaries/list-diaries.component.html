@@ -1,0 +1,30 @@
+<h1>
+  My Memmories
+</h1>
+<div class="alert alert-success" *ngIf="message">{{message}}</div>
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let diary of diaries">
+    <td>{{diary.id}}</td>
+    <td>{{diary.title}}</td>
+    <td>{{diary.diaryDate | date}}</td>
+    <td><button (click)="updateDiary(diary.id)" class="btn btn-success">Update</button></td>
+    <td><button (click)="deleteDiary(diary.id)" class="btn btn-danger">Delete</button></td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="row">
+  <button (click)="addDiary()" class="btn btn-success">Add</button>
+</div>
+</div>

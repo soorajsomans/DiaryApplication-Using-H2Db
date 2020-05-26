@@ -1,0 +1,28 @@
+<h2>Diary</h2>
+<div class="container">
+   
+  <form (ngSubmit)="!diaryForm.invalid && saveDiary()" #diaryForm="ngForm">
+    <fieldset class="form-group">
+      <label>Title</label>
+      <div class="alert alert-warning" *ngIf="title.dirty && title.invalid">Enter Valid Title</div> 
+      <input type="text" [(ngModel)]="diary.title" class="form-control" name="title" required="required" #title="ngModel" minlength="3">
+    </fieldset>
+    
+
+    <fieldset  class="form-group">
+      <label>Description</label>
+      <div class="alert alert-warning" *ngIf="description.dirty && description.invalid">Enter Valid Description</div> 
+      <input type="text" [(ngModel)]="diary.description" class="form-control" name="description" #description="ngModel" required="required" minlength="10">
+    </fieldset>
+
+    <fieldset  class="form-group">
+      <label>Date</label>
+      <div class="alert alert-warning" *ngIf="date.dirty && date.invalid">Enter Valid Date</div> 
+      <input type="date" [ngModel]="diary.diaryDate | date:'yyyy-MM-dd'"
+      (ngModelChange)="diary.diaryDate = $event"
+      class="form-control" name="date" required="required" #date="ngModel">
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary" >Save</button>
+</form>
+</div>

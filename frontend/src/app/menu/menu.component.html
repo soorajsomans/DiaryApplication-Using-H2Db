@@ -1,0 +1,26 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div>
+      <a routerLink="/welcome/Sooraj" class="navbar-brand">SSCraftZ</a>
+    </div>
+
+    <ul class="navbar-nav">
+      <li>
+        <a *ngIf="hardcodedAuthentcationService.isUserLoggedIn()" routerLink="/welcome/Sooraj" class="nav-link">Home</a>
+      </li>
+      <li>
+        <a *ngIf="hardcodedAuthentcationService.isUserLoggedIn()" routerLink="/diaries" class="nav-link">Diaries</a>
+      </li>
+    </ul>
+
+
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+      <li>
+        <a *ngIf="!hardcodedAuthentcationService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a>
+      </li>
+      <li>
+        <a *ngIf="hardcodedAuthentcationService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</header>
